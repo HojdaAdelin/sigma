@@ -76,7 +76,24 @@ header nav a:hover::after {
     width: 100%;
 }
 
+.console-container {
+    font-family: 'Khula', sans-serif;
+    font-size: 2em; /* Dimensiune mai mică pentru a fi mai bine integrată */
+    text-align: center;
+    height: 80px;
+    width: 90%;
+    display: block;
+    position: relative;
+    color: white;
+    
+}
 
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: -0.14em;
+    left: 10px;
+}
 
 .btn-inscriere {
     background: var(--highlight-color);
@@ -94,7 +111,7 @@ header nav a:hover::after {
 
 /* Secțiunea Hero */
 .hero {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 200px);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     display: flex;
     justify-content: center;
@@ -103,7 +120,15 @@ header nav a:hover::after {
     color: var(--text-color);
     position: relative;
     overflow: hidden;
-    
+}
+
+.hero > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
@@ -124,19 +149,50 @@ header nav a:hover::after {
 }
 
 .hero button {
-    background: var(--highlight-color);
-    color: var(--text-color);
+    background-color: transparent;
+    border: 2px solid var(--highlight-color);
+    color: var(--highlight-color);
     padding: 15px 30px;
-    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
     border-radius: 5px;
-    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2));
+    transition: all 0.5s ease-out;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .hero button:hover {
-    box-shadow: 0 0 20px var(--accent-color);
-    transform: scale(1.1);
+    color: #fff;
+    background-color: var(--highlight-color);
+    box-shadow: 0 0 25px var(--highlight-color), 0 0 50px var(--highlight-color);
+}
+
+.hero button:hover::before {
+    opacity: 1;
+    width: 400%;
+    height: 400%;
+}
+
+.hero button:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px var(--highlight-color);
 }
 
 /* Carduri Ediții Anterioare */
