@@ -1,0 +1,306 @@
+/* Paleta de culori și fonturi */
+:root {
+    --primary-color: #0d1117; /* Negru închis */
+    --secondary-color: #161b22; /* Gri foarte închis */
+    --accent-color: #4290c1; /* Mov pentru accent */
+    --text-color: #e5e5e5; /* Alb-gri */
+    --highlight-color: #1f6feb; /* Albastru pentru efecte */
+}
+
+*{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+
+header .menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--highlight-color);
+    transition: width 0.3s ease-in-out;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+
+
+.btn-inscriere {
+    background: var(--highlight-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.btn-inscriere:hover {
+    box-shadow: 0 0 20px var(--highlight-color);
+    transform: scale(1.05);
+}
+
+/* Secțiunea Hero */
+.hero {
+    height: calc(100vh - 100px);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.hero h1::before {
+    
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background: var(--highlight-color);
+}
+
+.hero button {
+    background: var(--highlight-color);
+    color: var(--text-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero button:hover {
+    box-shadow: 0 0 20px var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Carduri Ediții Anterioare */
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.card {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--highlight-color);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card .content {
+    padding: 20px;
+}
+
+/* Contact */
+.contact {
+    padding: 50px;
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea, .contact button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+.contact textarea {
+    resize: vertical; 
+}
+.contact button {
+    background: var(--highlight-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact button:hover {
+    background: var(--highlight-color);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+footer {
+    background: var(--secondary-color); /* Culoare similară cu "Despre concurs" */
+    color: var(--text-color);
+    padding: 30px 20px; /* Crește înălțimea */
+    text-align: center;
+    position: relative;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: var(--highlight-color); /* Albastru pentru link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color); /* Mov pentru hover */
+}
+
+/* Efecte Scroll */
+section {
+    position: relative;
+    padding: 50px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+section h2 {
+    position: relative;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+section h2::before {
+    content: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--highlight-color);
+    animation: scrollEffect 2s ease-in-out;
+}
+
+@keyframes scrollEffect {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    header nav {
+        display: none; /* Ascunde meniul */
+        flex-direction: column;
+        width: 100%;
+        background: var(--secondary-color);
+        padding: 10px 0;
+        position: absolute;
+        top: 100%; /* Coborâm sub header */
+        left: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    header nav a {
+        padding: 15px;
+        text-align: center;
+        display: block;
+    }
+
+    header .menu-toggle {
+        display: block; /* Afișăm butonul */
+    }
+
+    header.nav-open nav {
+        display: flex; /* Afișăm meniul când este activ */
+    }
+}
